@@ -1,4 +1,4 @@
-**MiniRHex: An Open-Source Hexapod Robot**
+**MiniRHex: Açık Erişimli Altı Ayaklı Robot**
 
 ![MiniRHex Running](Images/miniOnStumpScaled.jpg)
 Contact: nflowers@andrew.cmu.edu
