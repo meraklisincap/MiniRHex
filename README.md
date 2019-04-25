@@ -1,82 +1,86 @@
 **MiniRHex: Açık Erişimli Altı Ayaklı Robot**
 
 ![MiniRHex Running](Images/miniOnStumpScaled.jpg)
-Contact: nflowers@andrew.cmu.edu
+İletişim: nflowers@andrew.cmu.edu
 
 MiniRHex, RHex'in tasarımına dayanan Robomechanics Lab tarafından tasarlanan minyatür ölçekli bir hexapod'dur. Dikkate değer özellikler arasında lazer kesim çerçevesi ve düşük maliyetli yapı için 3 boyutlu baskı ayakları ve robotun davranışı üzerinde yüksek düzeyde özelleştirilebilir kontrol sağlayan sezgisel bir yazılım paketi bulunuyor. MiniRHex, öğrencilerin tamamen işlevsel bir yürüyüş robotuyla çok daha düşük bir maliyetle deneme yapmalarını sağlayan bir eğitim ve tanıtım aracı olarak tasarlanmıştır. Düşük fiyat etiketi, araştırma gruplarının bir makine filosuna sahip olmalarını sağlayarak her öğrencinin donanım ile daha fazla etkileşime girmesini sağlar. Muhtemel eğitim ilkeleri arasında yürüyüş tasarımı ve optimizasyonu, bacak tasarımı ve kontrolü ve mobil robot sensörü kullanımı bulunur.
 
 ![Payload Demonstration](Images/Brick_carrying.png)
 
-# Setup Instructions
-Building a MiniRhex requires access to a 3D printer and laser cutter. The links for off the shelf parts can be found below.
+# Kurum talimatları
+
+Bir MiniRhex inşa etmek bir 3D yazıcıya ve lazer kesiciye erişim gerektirir. Raf dışı parçalar için bağlantılar aşağıda bulunabilir.
 
 ![MiniRHex Prototype](Images/mini1.jpg)
 
-### Acquire Parts
-The Parts List and Links to order can be found in [Parts List](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
+### Parçalar edinin
 
-### Assemble Robot
-Assembly Instructions available at [Assembly Instructions](https://github.com/robomechanics/MiniRHex/tree/master/Assembly).
+Sipariş Listesine ve Sipariş Bağlantılarına buradan ulaşabilirsiniz. [Parts List](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
+
+### Robotu birleştirin
+
+Montaj talimatları mevcuttur. [Assembly Instructions](https://github.com/robomechanics/MiniRHex/tree/master/Assembly).
 
 ![Leg assembly close-up](Images/1.jpg)
 
-### Install Software
-1. Install OpenCM IDE from [http://www.robotis.us/opencmide/](http://www.robotis.us/opencmide/)
-2. Clone primary repository at [https://github.com/robomechanics/MiniRHex.git](https://github.com/robomechanics/MiniRHex.git)
+### Yazılımı yükleyin
+1. OpenCM IDE' yi buradan indirebilirsiniz.  [http://www.robotis.us/opencmide/](http://www.robotis.us/opencmide/)
+2. Adresindeki birincil depoyu klonlayınız. [https://github.com/robomechanics/MiniRHex.git](https://github.com/robomechanics/MiniRHex.git)
 
-### Configure Servo ID's
-1. In the openCM IDE, go to File>Examples>Dynamixel Easy>b_setID
-2. Change the NEW_ID variable to the ID number according to the diagram below
-3. Attach only the corresponding servo to the board (disconnect any other servos)
-4. Upload the code
-5. Repeat for each servo
+### Servo ID' lerini yapılandırın
+1. OpenCM IDE'de, Dosya> Örnekler> Dynamixel Easy> b_setID öğesine gidin.
+2. NEW_ID değişkenini aşağıdaki şemaya göre ID numarasına değiştirin.
+3. Sadece ilgili servoyu karta bağlayın. (diğer servoların bağlantısını kesin)
+4. Kodu yükleyin.
+5. Her servo için tekrarlayın.
 
-If the configuration was successful, the servo you are configuring should move back and forth.
+Yapılandırma başarılı olursa, yapılandırmakta olduğunuz servo ileri geri hareket etmelidir.
 
-### Set Leg Zeros
-1. Clone support repository at [https://github.com/nikolaif399/zero_finder.git](https://github.com/nikolaif399/zero_finder.git)
-2. Manually rotate each leg to be as close to straight down as possible
-3. Download zero_finder.ino to the OpenCM
-4. Open the serial monitor by going to Tools>Serial Monitor in the IDE and copy the zeros (printing) to the zeros array in leg_info.cpp
+### Ayakların sıfırlarını ayarlamak
+1. Klon desteği deposu bu adrestedir. [https://github.com/nikolaif399/zero_finder.git](https://github.com/nikolaif399/zero_finder.git)
+2. Her bacağını olabildiğince düz aşağıya yakın olacak şekilde elle döndürün.
+3. Zero_finder.ino dosyasını OpenCM'ye indirin.
+4. IDE'deki Araçlar> Seri Monitör'e giderek seri monitörü açın ve sıfırları (yazdırma) leg_info.cpp içindeki sıfır dizisine kopyalayın.
 
 ![MiniRHex CAD](Images/RHex_Mini_IDS.JPG)
 
-# Operating Instructions
-1. Connect the MiniRHex to your computer via the Micro USB port
-2. Open MiniRHex.ino in the OpenCM IDE and check that under "Tools":
-   - "Board" is set to ROBOTIS OpenCM9.04
-   - "Port" is set to the correct COM port (whichever COM port is added when MiniRHex is plugged in)
-3. Ensure the motor zeros in leg_info.cpp are correct
-4. Set desired gait parameters in gait_parameters.cpp
-5. Click the download icon in the upper left corner of the OpenCM IDE (wait until it reports "Done Downloading")
-6. Disconnect the Micro USB cable and connect the battery
-7. Flip the power switch on the OpenCM board
-8. Press the "RESET" button, make sure all motor LEDs are green
-9. Press "USER SW" to execute the code!
-10. Press the "RESET" button again to return to the standing behavior
+# Kullanma talimatları
+1. MiniRHex'i bilgisayarınıza Micro USB portu üzerinden bağlayın.
+2. OpenCM IDE'de MiniRHex.ino dosyasını açın ve "Araçlar" altında kontrol edin:
+   - "Board" ROBOTIS OpenCM9.04 olarak ayarlayın.
+   - "Port" doğru COM portuna ayarlayın. (MiniRHex takılıyken hangi COM portu eklenmişse)
+3. Leg_info.cpp içindeki motor sıfırlarının doğru olduğundan emin olunuz.
+4. İstenilen yürüyüş parametrelerini gait_parameters.cpp olarak ayarlayın.
+5. OpenCM IDE'nin sol üst köşesindeki indirme simgesine tıklayın. ("İndirme Tamamlandı" yazana kadar bekleyin)
+6. Mikro USB kablosunu çıkarın ve pili takın.
+7. OpenCM kartındaki güç anahtarını çevirin.
+8. "RESET" düğmesine basın, tüm motor LED'lerinin yeşil olduğundan emin olun.
+9. Kodu çalıştırmak için "USER SW" tuşuna basın!
+10. Ayakta durma davranışına geri dönmek için tekrar "RESET" düğmesine basın.
 
-# Robot Specifications
+# Robot özellikleri
 ![MiniRHex Specifications](Images/Spec_Chart.png)
 
-# Useful Links
-### Parts List
-The part list can be found at [Parts List](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
-### MiniRHex Repository
-The MiniRHex repository can be found at [MiniRHex Repository](https://github.com/robomechanics/MiniRHex.git).
-### Cite MiniRHex
-If referencing MiniRHex in a paper, please cite [this abstract](http://www.andrew.cmu.edu/user/amj1/papers/RSS2018ws_MiniRHex.pdf).
-Use [this BibTeX](https://github.com/robomechanics/MiniRHex/blob/master/citation.txt) for citations:
+# Kullanışlı bağlantılar
+### Parça listeleri
+Parça listesine buradan ulaşabilirsiniz. [Parts List](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
+### MiniRHex deposu
+MiniRHex deposuna bu adresten ulaşılabilir. [MiniRHex Repository](https://github.com/robomechanics/MiniRHex.git).
+### Alıntı MiniRHex
+Bir makalede MiniRHex'e gönderme yapıyorsanız lütfen alıntı yapın. [this abstract](http://www.andrew.cmu.edu/user/amj1/papers/RSS2018ws_MiniRHex.pdf).
+Alıntı için bunu kullanın. [this BibTeX](https://github.com/robomechanics/MiniRHex/blob/master/citation.txt):
 > M. Barragan, N. Flowers, and A. M. Johnson. "MiniRHex: A Small, Open-source, Fully Programmable Walking Hexapod". In *Robotics: Science and Systems Workshop on ``Design and Control of Small Legged Robots''*, Pittsburgh, PA, June 2018. 
  
-### Images
-See the [image gallery](https://robomechanics.github.io/MiniRHex/Images/) for more MiniRHex pictures.
+### Resimler
+Daha fazla MiniRHex resmi için. [image gallery](https://robomechanics.github.io/MiniRHex/Images/)
 
 ![MiniRHex Running](Images/miniOnRock.bmp)
-### Videos
-Check out the Robomechanics Lab [YouTube Page](https://www.youtube.com/watch?v=ldLXVDNCCzc&list=PLxHmBiQi0bD2aFgPKIrXhYXCCOGhTQmmk) for videos of MiniRHex in action!
+### Videolar
 
-# Contributors
-MiniRHex was designed by the following people in the [Robomechanics Lab](https://www.cmu.edu/me/robomechanicslab/)
+Robomechanics Lab'a  göz atın. [YouTube sayfası](https://www.youtube.com/watch?v=ldLXVDNCCzc&list=PLxHmBiQi0bD2aFgPKIrXhYXCCOGhTQmmk)
+
+# Katkıda bulunanlar
+MiniRHex aşağıdaki kişiler tarafından tasarlanmıştır. [Robomechanics Lab](https://www.cmu.edu/me/robomechanicslab/)
 * Nikolai Flowers (BS ME '20)
 * Barrett Werner (MS ME '19)
 * Monica Barragan (BS ME '19)
