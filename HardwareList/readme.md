@@ -15,7 +15,7 @@
 | Güç Kaynağı Bağlantıları | 1 | $6.49 | https://www.amazon.com/eBoot-Connector-Female-Cable-Battery/dp/B01M5AHF0Z |
 | **Robotis Parçaları** | | | |
 | Anakart | 1 | $19.90 | http://www.robotis.us/opencm9-04-c-with-onboard-xl-type-connectors/ |
-| Dynamixels (servolar) | 6 | $131.40 | http://www.robotis.us/dynamixel-xl-320/ |
+| Dynamixel (servolar) | 6 | $131.40 | http://www.robotis.us/dynamixel-xl-320/ |
 | Bluetooth (İsteğe Bağlı) | 1 | $32.90 | http://www.robotis.us/bt-210/ |
 | **3 Boyutlu Baskı Parçaları** | | | |
 | Servo Sleeve | 6 | | https://github.com/robomechanics/MiniRHex/tree/master/CAD |
