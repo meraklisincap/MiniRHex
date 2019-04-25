@@ -1,31 +1,28 @@
-# MiniRHex Assembly Instructions
+# MiniRHex Montaj Talimatları
 
-1. Solidworks files available in /CAD
- * Any updated or changed SolidWorks parts will be uploaded here
+1. Solidworks ve mevcut CAD dosyaları
+ * Güncellenen veya değiştirilen SolidWorks parçaları buraya yüklenecektir.
   
-2. Look at the MiniRhexHardware file to see the needed parts and links to the items.
-  * McMaster: M3 locknuts, button head screws, and spacer; 3mm acrylic
-  * Amazon: Battery, Plastidip, charger, and battery connectors
-  * Robotis: Main board, Dynamixels, Bluetooth(optional)
+2. Gerekli parçaları ve eşyalara bağlantıları görmek için MiniRhexHardware dosyasına bakın.
   
-3. If you have access to an Ultimaker 3, simply upload and print using the extended printer gcode, in /CAD/STL, called     MiniRhex_full_print_compressed.gcode.gz.
-   Otherwise, print the following (PLA), .stl files can be found in /CAD/STL
- * 6 servo sleeve parts (servo sleeve.STL), for best results print with the back side on the build plate 
- * 4 shaft-edge parts (shaft-edge.STL)
- * 2 shaft-mid parts (shaft-mid.STL)
- * 1 battery case part (Battery case.STL)
- * 6 leg parts (leg.STL)
+3. Bir Ultimaker 3'e erişiminiz varsa, MiniRhex_full_print_compressed.gcode.gz olarak adlandırılan / CAD / STL içindeki genişletilmiş yazıcı g kodunu kullanarak yükleyin ve yazdırın.
+   Aksi takdirde, aşağıdakileri (PLA) yazdırın, .stl dosyaları / CAD / STL içinde bulunabilir.
+ * 6 (servo sleeve.STL), En iyi sonuçlar için yapı plakasında arka yüze baskı yapın.
+ * 4 (shaft-edge.STL)
+ * 2 (shaft-mid.STL)
+ * 1 (Battery case.STL)
+ * 6 (leg.STL)
  
- The expected amount of PLA used to print is around:
- * 6 servo sleeve parts at (11g each)(6 sleeves) = 66g
- * 4 shaft-edge parts at (3g each)(4 shaft edges) = 12g
- * 2 shaft-mid parts at (5g each)(2 shaft-mid parts) = 10g
- * 1 battery case part (17g each)(1 case) = 17g
- * 6 leg parts (2g each)(6 legs) = 12g
+ Yazdırmak için kullanılan beklenen PLA miktarı şudur:
+ * 6 (6 sleeves) = 66g
+ * 4 (4 shaft edges) = 12g
+ * 2 (2 shaft-mid parts) = 10g
+ * 1 (1 case) = 17g
+ * 6 (6 legs) = 12g
  
- The total amount adds to 117g.
+Toplam miktar 117g.
  
- After printing, there are supports inside the servo sleeves, shaft-edge parts and shaft-mid parts. Ensure that you remove the supports inside the prints before moving on. They should look like this:
+ Yazdırdıktan sonra, servo kovanlarının, şaft kenarı parçalarının ve şaft orta parçalarının içinde destekler vardır. Devam etmeden önce baskıların içindeki destekleri çıkardığınızdan emin olun. Buna benzemeliler:
  
  ![Shaft-mid](Images/final_mid.jpg)
  
@@ -33,106 +30,104 @@
  
  ![Servo_sleeve](Images/final_servo_sleeve.jpg)
  
- All in all, the parts should look as follows:
+Sonuç olarak, parçalar aşağıdaki gibi görünmelidir:
  
- ![Everything](Images/final_all.png)
+ ![herşey](Images/final_all.png)
   
-4. Open base.sldprt and save as a .dxf file. Use this file to laser cut 3-mm thick acrylic to
-serve as the foundation for the robot.
+4. Base.sldprt dosyasını açın ve bir .dxf dosyası olarak kaydedin. 3 mm kalınlığında akrilik kesmek için bu dosyayı kullanın.
+robot için temel olarak hizmet vermektedir.
 
-Check to make sure the screws fit through the holes. If not, drill them out before moving on.
+Vidaların deliklerden geçtiğinden emin olun. Değilse, devam etmeden önce onları delin.
 
-5. Prepare the mainboard for use.
- * Solder the battery connector onto one positive pinhole and one negative pinhole
-  for power. The location on the board is shown below:
+5. Anakartı kullanıma hazırlayın.
+ * Akü soketini bir pozitif iğne deliğine ve bir negatif iğne deliğine lehimleyin.
+  güç için tahtadaki yer aşağıda gösterilmiştir:
   
-  ![Power pin location](Images/MiniRHex_powerpins.png)
+  ![Güç pin yeri](Images/MiniRHex_powerpins.png)
   
-6. First, connect the battery case and mainboard to the foundation, with the USB port facing outwards (see step 16. for complete MiniRHex layout).
- * Connections:
-    * Battery case: M3 button head x 10 mm, M3 nut
-    * Mainboard: M3 spacer, M3 button head x 10 mm, M3 lock nut
-  * Battery case is near the center of the foundation.
-  * The mainboard’s micro-USB port should face out.
-  * The mainboard will be towards the front of the robot.
+6. Öncelikle, USB girişini dışarı bakacak şekilde pil kutusunu ve anakartı prize takın (tam MiniRHex düzeni için 16. adıma bakın).
+ * Bağlantılar:
+  * Pil kutusu: M3 düğme kafası x 10 mm, M3 somunu
+  * Ana kart: M3 boşluk, M3 düğme kafası x 10 mm, M3 kilit somunu
+  * Pil kutusu vakfın merkezine yakın.
+  * Anakartın mikro-USB bağlantı noktası dışarı dönük olmalıdır.
+  * Ana kart robotun önüne doğru olacaktır.
   
-  Place nuts on top of the board so it doesn't interfere with MiniRHex's movement. It is not recommended to place the nut underneath the board.
+  Somunları tahtanın üzerine yerleştirin, böylece MiniRHex'in hareketine engel olmaz. Somunun tahtanın altına yerleştirilmesi önerilmez.
   
-  For attatching the mainboard, place spacer in between the mainboard and the acrylic base, then the nut on top of the mainboard.
+  Anakartı yerleştirmek için, anakart ile akrilik taban arasına ara parçayı, ardından anakartın üzerine somunu yerleştirin.
   
-7. Next, prepare the legs by using Plastidip (either dip or spray) and coating around 75% of each of the six
-legs until high friction surface forms on each leg.
-  * Between each coat, let dry for at least one hour.
-  * Make sure the dip is evenly coated around the leg.
-  * Do not cover the through holes for the screws.
+7. Ardından, Plastidip (daldırma veya sprey) kullanarak bacakları hazırlayın ve altı yüzeyin her birinin yaklaşık% 75'ini kaplayın
+Her bir bacak üzerinde yüksek sürtünme yüzeyi oluşana kadar bacaklar.
+  * Her kat arasında en az bir saat kurumaya bırakınız.
+  * Dipin bacağın etrafına eşit şekilde kaplandığından emin olun.
+  * Vidaların geçiş deliklerini kapatmayın.
   
-  The legs should look as follows:
+  Bacaklar aşağıdaki gibi görünmelidir:
   
-  ![Final Legs](Images/final_leg.jpg)
+  ![Ayaklar Son](Images/final_leg.jpg)
   
-8. Connect four of the six legs to edge shafts (shorter shafts).
+8. Altı bacağın dördünü kenar millerine (daha kısa miller) bağlayın.
    
-   Due to the nature of 3-D printing, you may need to file down your leg shafts in order for the legs to sit comfortably or drill out the holes in the legs.
+  Üç boyutlu baskının doğası gereği, bacakların rahatça oturabilmesi veya bacaklardaki delikleri açması için bacak millerinizi aşağıya eğmeniz gerekebilir.
    
-   Next, tap the leg shafts using a m3 tap.
+   Sonra, bir m3 musluğu kullanarak bacak millerine dokunun.
    
-   Connect the legs to leg shafts using a m3 screw.
+   Bir m3 vida kullanarak bacakları bacak millerine bağlayın.
 
-  * Align the leg through holes with the holes on the cut-out portion of the shaft.
-  * Ensure that the leg is flush and lays flat against the shaft.
-  * Connection: M3 socket head x 10 mm
-  * Ensure that there are two legs facing each direction as shown below
+  * Ayağı deliklerin içinden milin oyuk kısmındaki deliklerle aynı hizaya getirin.
+  * Bacağın hizalı olduğundan ve mile yaslandığından emin olun.
+  * Bağlantı: M3 soket kafası x 10 mm
+  * Aşağıda gösterildiği gibi her yöne bakan iki bacak olduğundan emin olun.
   
-9. Connect the other two legs to the mid shafts (longer shaft).
+9. Diğer iki ayağı orta millere (daha uzun şaft) bağlayın.
 
-   Similarly, you may need to first file and drill the leg shafts.
+  Benzer şekilde, ilk önce bacak millerini eğmeniz ve delmeniz gerekebilir.
    
-   Again, tap the leg shafts before inserting screws. 
+  Yine, vidaları takmadan önce bacak millerine dokunun. 
    
-  * Align the leg through holes with the holes on the cut-out portion of the shaft.
-  * Ensure that the leg is flush and lays flat against the shaft.
-  * Connection: M3 socket head x 10 mm
-  * For one of the two connections, be sure to switch the orientation of the leg
-  as shown below.
+  * Ayağı deliklerin içinden milin oyuk kısmındaki deliklerle aynı hizaya getirin.
+  * Bacağın hizalı olduğundan ve mile yaslandığından emin olun.
+  * Bağlantı: M3 soket kafası x 10 mm
+  * İki bağlantıdan biri için bacağın yönünü değiştirdiğinizden emin olun.
+  Aşağıda gösterildiği gibi.
   
-  ![Leg Orientation](Images/minirhex_motor_orientation.JPG)
+  ![Bacak Yönü](Images/minirhex_motor_orientation.JPG)
   
-10. Connect each shaft-leg apparatus to the Dynamixel XL-320 servo motor.
-  * Orientation: Make sure the half circle each leg forms faces the front of the robot:
-  towards the side with the mainboard.
-  * Detach the center screw in the servo horn, and pry off the horn itself.
-    * The horn looks like a small, black plastic cylinder with 4 holes.
-  * On the side of the horn there will be tick mark, and on the opposite side, two tick marks. When aligning the legs into the servo horn, ensure that when placing the servo horn back on the motor that the single tick mark is facing downwards, towards the bottom of the servo.
-  * Align the 4 through holes on the servo horn with the 4 extruded pieces on the shaft
-  face (the shaft length doesn’t matter).
-  * Align the horn (now connected to the leg apparatus) to its key on the body of the servo.
-    * Once the horn is flush against the body, connect the horn/shaft/leg apparatus
-    to the servo motor.
-    * Connection: M2.5x25 bolts from McMaster
+10. Her mil-ayak aparatını Dynamixel XL-320 servo motora bağlayın.
+  * Yönlendirme: Her bacağın oluşturduğu yarım dairenin robotun önüne baktığından emin olun:
+  anakart ile yana doğru.
+  * Servo kornadaki merkez vidayı sökün ve kornadan ayırın.
+  * Korna tarafında bir onay işareti ve karşı tarafta iki onay işareti olacaktır. Bacakları servo kornasına hizalarken, servo kornasını motora geri yerleştirirken, tek onay işaretinin aşağıya bakacak şekilde, servo tabanına doğru baktığından emin olun.
+  * Servo boynuzu üzerindeki 4 delikten milin üzerine çekilmiş 4 adet hizalayın
+  Yüz (mil uzunluğu önemli değil).
+  * Kornayı (şimdi bacak aparatına bağlı) servo gövdesindeki anahtarına hizalayın.
+    * Korna gövdeye tam temas ettiğinde, korna / mil / bacak aparatını bağlayın.
+    servo motora
+    * Bağlantı: McMaster'dan M2.5x25 cıvatalar
 
-11. Slide each servo into a servo sleeve.
+11. Her servoyu bir servo kovanın içine kaydırın.
 
-Before connecting each servo sleeve to the foundation, configure each of the servo IDs by connecting them with the provided wires individually to the mainboard. 
+Her servo manşonu temele bağlamadan önce, servo ID'lerinin her birini verilen tellerle ayrı ayrı ana karta bağlayarak yapılandırın. 
 
-Instructions on how to [Configure Servo IDs](https://github.com/robomechanics/MiniRHex#configure-servo-ids).
+[Servo ID'lerini Yapılandırma] ile ilgili talimatlar (https://github.com/robomechanics/MiniRHex#configure-servo-ids).
 
-12. Connect each servo sleeve to the foundation.
-  * Orientation: Be sure all legs face forward (semicircle faces the mainboard).
-  * Connection: M3 button head x 10 mm, M3 nut
+12. Her servo kovanı temele bağlayın.
+  *Yönlendirme: Tüm bacakların öne dönük olduğundan emin olun (yarım daire ana karta bakar).
+  * Bağlantı: M3 düğme kafası x 10 mm, M3 somun
   
-  Again, it is recommended that the M3 nuts are placed on top of the board as opposed to the bottom of the board.
+  Yine, M3 somunların, levhanın dibine zıt olarak levhanın üzerine yerleştirilmesi önerilir.
   
-13. Connect the servos to the mainboard.
-  * Connect such that no wires interfere with leg rotation.
-14. Charge battery(ies) and check voltage(s).
-  * Maximum voltage:  8.4V
-  * Charge if below:  7.0V
-  * Dispose if below: 5.0V
+13. Servoları anakarta bağlayın.
+  * Kabloların bacak dönüşüne engel olmayacak şekilde bağlayın.
+14. Bataryaları şarj edin ve voltajı kontrol edin.
+  * Maksimum voltaj:  8.4V
+  * Altta şarj:  7.0V
+  * Aşağıda varsa atın: 5.0V
 
-15. Upload code using the micro-USB port. More detailed instructions can be found [here](https://robomechanics.github.io/MiniRHex).
+15. Mikro USB bağlantı noktasını kullanarak kod yükleyin. Daha detaylı talimatlar [burada] bulunabilir (https://robomechanics.github.io/MiniRHex).
 
-16. Take electronic wires that come with the servos, and connect them like below
-
-![wiring diagram](Images/MiniRHex_wiring_diagram.png)
+16. Servolarla gelen elektronik kabloları alın ve aşağıdaki gibi bağlayın.
+![bağlantı şeması](Images/MiniRHex_wiring_diagram.png)
  
  
