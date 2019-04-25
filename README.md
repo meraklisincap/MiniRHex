@@ -1,17 +1,17 @@
 **MiniRHex: Açık Erişimli Altı Ayaklı Robot**
 
-![MiniRHex Running](Images/miniOnStumpScaled.jpg)
+![MiniRHex Yürüyüş](Images/miniOnStumpScaled.jpg)
 İletişim: nflowers@andrew.cmu.edu
 
 MiniRHex, RHex'in tasarımına dayanan Robomechanics Lab tarafından tasarlanan minyatür ölçekli bir hexapod'dur. Dikkate değer özellikler arasında lazer kesim çerçevesi ve düşük maliyetli yapı için 3 boyutlu baskı ayakları ve robotun davranışı üzerinde yüksek düzeyde özelleştirilebilir kontrol sağlayan sezgisel bir yazılım paketi bulunuyor. MiniRHex, öğrencilerin tamamen işlevsel bir yürüyüş robotuyla çok daha düşük bir maliyetle deneme yapmalarını sağlayan bir eğitim ve tanıtım aracı olarak tasarlanmıştır. Düşük fiyat etiketi, araştırma gruplarının bir makine filosuna sahip olmalarını sağlayarak her öğrencinin donanım ile daha fazla etkileşime girmesini sağlar. Muhtemel eğitim ilkeleri arasında yürüyüş tasarımı ve optimizasyonu, bacak tasarımı ve kontrolü ve mobil robot sensörü kullanımı bulunur.
 
-![Payload Demonstration](Images/Brick_carrying.png)
+![Yük Gösterisi](Images/Brick_carrying.png)
 
 # Kurum talimatları
 
 Bir MiniRhex inşa etmek bir 3D yazıcıya ve lazer kesiciye erişim gerektirir. Raf dışı parçalar için bağlantılar aşağıda bulunabilir.
 
-![MiniRHex Prototype](Images/mini1.jpg)
+![MiniRHex Prototip](Images/mini1.jpg)
 
 ### Parçalar edinin
 
@@ -19,9 +19,9 @@ Sipariş listesine ve sipariş bağlantılarına buradan ulaşabilirsiniz. [Par�
 
 ### Robotu birleştirin
 
-Montaj talimatları mevcuttur. [Assembly Instructions](https://github.com/robomechanics/MiniRHex/tree/master/Assembly).
+Montaj talimatları mevcuttur. [Montaj Talimatları](https://github.com/robomechanics/MiniRHex/tree/master/Assembly).
 
-![Leg assembly close-up](Images/1.jpg)
+![Ayak Montaj - Yakından](Images/1.jpg)
 
 ### Yazılımı yükleyin
 1. OpenCM IDE' yi buradan indirebilirsiniz.  [http://www.robotis.us/opencmide/](http://www.robotis.us/opencmide/)
@@ -59,7 +59,7 @@ Yapılandırma başarılı olursa, yapılandırmakta olduğunuz servo ileri geri
 10. Ayakta durma davranışına geri dönmek için tekrar "RESET" düğmesine basın.
 
 # Robot özellikleri
-![MiniRHex Specifications](Images/Spec_Chart.png)
+![MiniRHex Özellikleri](Images/Spec_Chart.png)
 
 # Kullanışlı bağlantılar
 ### Parça listesi
@@ -67,14 +67,14 @@ Parça listesine buradan ulaşabilirsiniz. [Parça Lstesi](https://github.com/ro
 ### MiniRHex deposu
 MiniRHex deposuna bu adresten ulaşılabilir. [MiniRHex Deposus://github.com/robomechanics/MiniRHex.git).
 ### Alıntı MiniRHex
-Bir makalede MiniRHex'e gönderme yapıyorsanız lütfen alıntı yapın. [](http://www.andrew.cmu.edu/user/amj1/papers/RSS2018ws_MiniRHex.pdf).
-Alıntı için bunu kullanın. [this BibTeX](https://github.com/robomechanics/MiniRHex/blob/master/citation.txt):
+Bir makalede MiniRHex'e gönderme yapıyorsanız lütfen alıntı yapın. [Özet](http://www.andrew.cmu.edu/user/amj1/papers/RSS2018ws_MiniRHex.pdf).
+Alıntı için bunu kullanın. [BibTeX](https://github.com/robomechanics/MiniRHex/blob/master/citation.txt):
 > M. Barragan, N. Flowers, and A. M. Johnson. "MiniRHex: A Small, Open-source, Fully Programmable Walking Hexapod". In *Robotics: Science and Systems Workshop on ``Design and Control of Small Legged Robots''*, Pittsburgh, PA, June 2018. 
  
 ### Resimler
-Daha fazla MiniRHex resmi için. [image gallery](https://robomechanics.github.io/MiniRHex/Images/)
+Daha fazla MiniRHex resmi için. [Resim Galerisi](https://robomechanics.github.io/MiniRHex/Images/)
 
-![MiniRHex Running](Images/miniOnRock.bmp)
+![MiniRHex Yürüyüş](Images/miniOnRock.bmp)
 ### Videolar
 
 Robomechanics Lab'a  göz atın. [YouTube sayfası](https://www.youtube.com/watch?v=ldLXVDNCCzc&list=PLxHmBiQi0bD2aFgPKIrXhYXCCOGhTQmmk)
