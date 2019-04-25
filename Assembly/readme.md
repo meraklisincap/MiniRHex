@@ -125,7 +125,7 @@ Her servo manşonu temele bağlamadan önce, servo ID'lerinin her birini verilen
   * Altta şarj:  7.0V
   * Aşağıda varsa atın: 5.0V
 
-15. Mikro USB bağlantı noktasını kullanarak kod yükleyin. Daha detaylı talimatlar [burada] bulunabilir (https://robomechanics.github.io/MiniRHex).
+15. Mikro USB bağlantı noktasını kullanarak kod yükleyin. Daha detaylı talimatlar burada bulunabilir. (https://robomechanics.github.io/MiniRHex).
 
 16. Servolarla gelen elektronik kabloları alın ve aşağıdaki gibi bağlayın.
 ![bağlantı şeması](Images/MiniRHex_wiring_diagram.png)
