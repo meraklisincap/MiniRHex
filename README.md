@@ -36,7 +36,7 @@ Montaj talimatları mevcuttur. [Montaj Talimatları](https://github.com/robomech
 
 Yapılandırma başarılı olursa, yapılandırmakta olduğunuz servo ileri geri hareket etmelidir.
 
-### Ayakların sıfırlarını ayarlamak
+### Ayakların sıfırlarını ayarlayın
 1. Klon desteği deposu bu adrestedir. [https://github.com/nikolaif399/zero_finder.git](https://github.com/nikolaif399/zero_finder.git)
 2. Her bacağını olabildiğince düz aşağıya yakın olacak şekilde elle döndürün.
 3. Zero_finder.ino dosyasını OpenCM'ye indirin.
