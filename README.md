@@ -15,7 +15,7 @@ Bir MiniRhex inşa etmek bir 3D yazıcıya ve lazer kesiciye erişim gerektirir.
 
 ### Parçalar edinin
 
-Sipariş Listesine ve Sipariş Bağlantılarına buradan ulaşabilirsiniz. [Parts List](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
+Sipariş listesine ve sipariş bağlantılarına buradan ulaşabilirsiniz. [Parça Listesi](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
 
 ### Robotu birleştirin
 
@@ -62,12 +62,12 @@ Yapılandırma başarılı olursa, yapılandırmakta olduğunuz servo ileri geri
 ![MiniRHex Specifications](Images/Spec_Chart.png)
 
 # Kullanışlı bağlantılar
-### Parça listeleri
-Parça listesine buradan ulaşabilirsiniz. [Parts List](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
+### Parça listesi
+Parça listesine buradan ulaşabilirsiniz. [Parça Lstesi](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
 ### MiniRHex deposu
-MiniRHex deposuna bu adresten ulaşılabilir. [MiniRHex Repository](https://github.com/robomechanics/MiniRHex.git).
+MiniRHex deposuna bu adresten ulaşılabilir. [MiniRHex Deposus://github.com/robomechanics/MiniRHex.git).
 ### Alıntı MiniRHex
-Bir makalede MiniRHex'e gönderme yapıyorsanız lütfen alıntı yapın. [this abstract](http://www.andrew.cmu.edu/user/amj1/papers/RSS2018ws_MiniRHex.pdf).
+Bir makalede MiniRHex'e gönderme yapıyorsanız lütfen alıntı yapın. [](http://www.andrew.cmu.edu/user/amj1/papers/RSS2018ws_MiniRHex.pdf).
 Alıntı için bunu kullanın. [this BibTeX](https://github.com/robomechanics/MiniRHex/blob/master/citation.txt):
 > M. Barragan, N. Flowers, and A. M. Johnson. "MiniRHex: A Small, Open-source, Fully Programmable Walking Hexapod". In *Robotics: Science and Systems Workshop on ``Design and Control of Small Legged Robots''*, Pittsburgh, PA, June 2018. 
  
