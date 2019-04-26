@@ -5,11 +5,11 @@
 #include "pd_control.h"
 #include "gait_parameters.h"
 
-// Dynamixel ayarlar //
+// Dynamixel Ayarlar //
 #define DXL_BUS_SERIAL1 1  //Dynamixel on Serial1(USART1)  <-OpenCM9.04
 Dynamixel Dxl(DXL_BUS_SERIAL1);
 
-// Control tablosu //
+// Control Tablosu //
 #define MOVING_SPEED 32
 #define PRESENT_POS 37
 #define PRESENT_SPEED 39
