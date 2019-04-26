@@ -63,7 +63,7 @@ Yapılandırma başarılı olursa, yapılandırmakta olduğunuz servo ileri geri
 
 # Kullanışlı bağlantılar
 ### Parça listesi
-Parça listesine buradan ulaşabilirsiniz. [Parça Lstesi](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList)
+Parça listesine buradan ulaşabilirsiniz. [Parça Listesi](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList)
 ### MiniRHex deposu
 MiniRHex deposuna bu adresten ulaşılabilir. [MiniRHex Deposu](https://github.com/robomechanics/MiniRHex.git)
 ### Alıntı MiniRHex
