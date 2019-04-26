@@ -16,7 +16,7 @@ Dynamixel Dxl(DXL_BUS_SERIAL1);
 #define PRESENT_VOLTAGE 45
 #define LED 25
 
-//Rewritable globals
+//Global değiskenler
 float desired_vel;
 float desired_theta;
 float actual_vel;
@@ -24,88 +24,87 @@ float actual_theta;
 float control_signal;
 float actual_p;
 
-
 int dead_buffer = 40;
 
-const int legs_active = 6;
+const int legs_active = 6;//Aktif ayak sayısını belirtir.
 
-const int packet_length =  2 * legs_active;
+const int packet_length =  2 * legs_active;//Bilgi paketinin uzunlugunu belirtir.
 word packet[packet_length]; 
 
-void setup(){
+void setup(){//Ayar ve tanıtma fonksiyonu 
   Dxl.begin(3); 
   Serial2.begin(57600); 
-  pinMode(BOARD_BUTTON_PIN, INPUT_PULLDOWN); 
-  pinMode(BOARD_LED_PIN, OUTPUT); 
+  pinMode(BOARD_BUTTON_PIN, INPUT_PULLDOWN);//Kartın üzerindeki butonun giriş oldugunu belirttik. 
+  pinMode(BOARD_LED_PIN, OUTPUT);//Kartın üzerindeki led' in çıkış oldugunu belirttik.
   int t_start = millis();
-  for (int i = 1; i <= legs_active; i++){ 
+  for (int i = 1; i <= legs_active; i++){ //Reset butonuna basıldıgında ayakların ayarlaılan sıfır noklarına gelmesini saglar.  
     Dxl.wheelMode(legs[i].id); 
     update_gait(i, initial_gait, t_start); 
   }
 }
 
-void dur(){
+void dur(){//durma hareketi yapması için oluşturulan fonksiyon
 
-    int t_start=millis();
-    int gait=0;
-    for(int i = 1; i <= legs_active; i++){
+    int t_start=millis();//Yeni bir zaman sayacı başlar.
+    int gait=0;//Hareket şeklini belirler(0-stand)
+    for(int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
     update_gait(i, gait, t_start);}  
 
 }
-void ileri(){
+void ileri(){//İleri gitme hareketi yapması için oluşturulan fonksiyon
 
-    int t_start=millis();
-    int gait=1;
-    for(int i = 1; i <= legs_active; i++){
+    int t_start=millis();//Yeni bir zaman sayacı başlar.
+    int gait=1;//Hareket şeklini belirler(1-walk)
+    for(int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir. 
     update_gait(i, gait, t_start);}  
 
 }
-void sol(){
+void sol(){//Sola donme hareketi yapması için oluşturulan fonksiyon
 
-    int t_start=millis();
-    int gait=2;
-    for(int i = 1; i <= legs_active; i++){
-    update_gait(i, gait, t_start);}  
-
-}
-
-void geri(){
-
-    int t_start=millis();
-    int gait=3;
-    for(int i = 1; i <= legs_active; i++){
-    update_gait(i, gait, t_start);}  
-
-}
-void sag(){
-
-    int t_start=millis();
-    int gait=4;
-    for(int i = 1; i <= legs_active; i++){
-    update_gait(i, gait, t_start);}  
-
-}
-void pronk(){
-
-    int t_start=millis();
-    int gait=5;
-    for(int i = 1; i <= legs_active; i++){
+    int t_start=millis();//Yeni bir zaman sayacı başlar.
+    int gait=2;//Hareket şeklini belirler(2-left).
+    for(int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
     update_gait(i, gait, t_start);}  
 
 }
 
-void loop(){
+void geri(){//Geri gitme hareketi yapması için oluşturulan fonksiyon
+
+    int t_start=millis();//Yeni bir zaman sayacı başlar.
+    int gait=3;//Hareket şeklini belirler(3-reverse).
+    for(int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir. 
+    update_gait(i, gait, t_start);}  
+
+}
+void sag(){//Saga donme hareketi yapması için oluşturulan fonksiyon
+
+    int t_start=millis();//Yeni bir zaman sayacı başlar.
+    int gait=4;//Hareket şeklini belirler(4-right).
+    for(int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
+    update_gait(i, gait, t_start);}
+
+}
+void pronk(){//Pronk hareketi yapması için oluşturulan fonksiyon
+
+    int t_start=millis();
+    int gait=5;//Hareket şeklini belirler(5-pronk).   
+    for(int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
+    update_gait(i, gait, t_start);}//  
+
+}
+
+void loop(){//Sürekli çalışan fonksiyon 
   
-if(millis()>2000 && millis()<2100){//2.saniyede ileri fonksiyonu çalıştır. 
+if(millis()>2000 && millis()<2100){//2 ile 2.1'inci saniyeler arasında ileri fonksiyonu çalıştır. 
 ileri();
 }
-if(millis()>5000 && millis()<5100){ //5.saniyede dur fonksiyonunu çalıştır.
+if(millis()>5000 && millis()<5100){ //5 ile 5.1' inci saniyeler arasında dur fonksiyonunu çalıştır.
 dur();
 }
-if(millis()>5500 && millis()<5600){//5,5.saniyede dur fonksiyonunu çalıştır. 
+if(millis()>5500 && millis()<5600){//5.5 ile 5.6' inci saniyeler arasında sag fonksiyonunu çalıştır. 
 sag();
 }
-if(millis()>8000 && millis()<8100){//8.saniyede dur fonksiyonunu çalıştır. 
+if(millis()>8000 && millis()<8100){//8 ile 8.1' inci saniyeler arasında dur fonksiyonunu çalıştır. 
 dur();
 }
   
