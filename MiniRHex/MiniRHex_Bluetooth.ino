@@ -16,7 +16,7 @@ Dynamixel Dxl(DXL_BUS_SERIAL1);
 #define PRESENT_VOLTAGE 45
 #define LED 25
 
-//Global Değişkenler//
+// Global Değişkenler //
 float desired_vel;
 float desired_theta;
 float actual_vel;
@@ -26,64 +26,64 @@ float actual_p;
 
 int dead_buffer = 40;
 
-const int legs_active = 6;//Aktif ayak sayısını belirtir.
+const int legs_active = 6; //Aktif ayak sayısını belirtir.
 
-const int packet_length =  2 * legs_active;//Bilgi paketinin uzunlugunu belirtir.
+const int packet_length =  2 * legs_active; //Bilgi paketinin uzunlugunu belirtir.
 word packet[packet_length]; 
 
-void setup(){//Ayar ve tanıtma fonksiyonu
+void setup(){ //Ayar ve tanıtma fonksiyonu
   Dxl.begin(3); 
   Serial2.begin(57600); 
-  pinMode(BOARD_BUTTON_PIN, INPUT_PULLDOWN);//Kartın üzerindeki butonun giriş oldugu belirtilir.  
-  pinMode(BOARD_LED_PIN, OUTPUT);//Kartın üzerindeki led' in çıkış oldugu belirtilir.
+  pinMode(BOARD_BUTTON_PIN, INPUT_PULLDOWN); //Kartın üzerindeki butonun giriş oldugu belirtilir.  
+  pinMode(BOARD_LED_PIN, OUTPUT); //Kartın üzerindeki led' in çıkış oldugu belirtilir.
   int t_start = millis();
-  for (int i = 1; i <= legs_active; i++){//Reset butonuna basıldıgında ayakların ayarlaılan sıfır noklarına gelmesini saglar. 
+  for (int i = 1; i <= legs_active; i++){ //Reset butonuna basıldıgında ayakların ayarlanılan sıfır noklarına gelmesini saglar. 
     Dxl.wheelMode(legs[i].id); 
     update_gait(i, initial_gait, t_start); 
   }
 }
 
-void loop(){//Sürekli çalışan fonksiyon 
+void loop(){ //Sürekli çalışan fonksiyon 
  
   //bluetooth kontrol
-  if (Serial2.available()){//Bluetooth ile alınan veri a değişkenine aktarılır.
+  if (Serial2.available()){ //Bluetooth ile alınan veri a değişkenine aktarılır.
     int a = (int)(Serial2.read());
-    int gait = 0;//Başlangıç hareket şekli tanımlanır(0-stand).
+    int gait = 0; //Başlangıç hareket şekli tanımlanır(0-stand).
 
-  if(a==1) {//Eğer a değişkeni 1' e eşitse aşağıdaki kod satırları çalısır.  
-      gait=1;//Hareket şekli belirtilir(1-walk).
-      int t_start=millis();//Yeni bir zaman sayacı başlar.
-      for (int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
+  if(a==1) { //Eğer a değişkeni 1' e eşitse aşağıdaki kod satırları çalısır.  
+      gait=1; //Hareket şekli belirtilir(1-walk).
+      int t_start=millis(); //Yeni bir zaman sayacı başlar.
+      for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
-      SerialUSB.println("yürü");//Port ekranında yapılan hareker yazdırılır.
+      SerialUSB.println("yürü"); //Port ekranında yapılan hareker yazdırılır.
   }
-  else if(a==8) {//Eğer a değişkeni 8' e eşitse aşağıdaki kod satırları çalısır.
-      gait=4;//Hareket şekli belirtilir(4-right).
-      int t_start=millis();//Yeni bir zaman sayacı başlar.
-      for (int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
+  else if(a==8) { //Eğer a değişkeni 8' e eşitse aşağıdaki kod satırları çalısır.
+      gait=4; //Hareket şekli belirtilir(4-right).
+      int t_start=millis(); //Yeni bir zaman sayacı başlar.
+      for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
-      SerialUSB.println("saga don");//Port ekranında yapılan hareker yazdırılır.
+      SerialUSB.println("saga don"); //Port ekranında yapılan hareker yazdırılır.
   }
-  else if(a==4) {//Eğer a değişkeni 4' e eşitse aşağıdaki kod satırları çalısır.
-      gait=2;//Hareket şekli belirtilir(2-left).
-      int t_start=millis();//Yeni bir zaman sayacı başlar.
-      for (int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
+  else if(a==4) { //Eğer a değişkeni 4' e eşitse aşağıdaki kod satırları çalısır.
+      gait=2; //Hareket şekli belirtilir(2-left).
+      int t_start=millis(); //Yeni bir zaman sayacı başlar.
+      for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
-      SerialUSB.println("sola don");//Port ekranında yapılan hareker yazdırılır.
+      SerialUSB.println("sola don"); //Port ekranında yapılan hareker yazdırılır.
   }
-  else if(a==2) {//Eğer a değişkeni 2' ye eşitse aşağıdaki kod satırları çalısır.
-      gait=3;//Hareket şekli belirtilir(3-reverse).
-      int t_start=millis();//Yeni bir zaman sayacı başlar.
-      for (int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
+  else if(a==2) { //Eğer a değişkeni 2' ye eşitse aşağıdaki kod satırları çalısır.
+      gait=3; //Hareket şekli belirtilir(3-reverse).
+      int t_start=millis(); //Yeni bir zaman sayacı başlar.
+      for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
-      SerialUSB.println("geri git");//Port ekranında yapılan hareker yazdırılır.
+      SerialUSB.println("geri git"); //Port ekranında yapılan hareker yazdırılır.
   }  
-  else if(a==16){//Eğer a değişkeni 16' ya eşitse asagıdaki kod satırları çalısır.
-      gait=0;//Hareket şekli belirtilir(0-stand).
-      int t_start=millis();//Yeni bir zaman sayacı başlar.
-      for (int i = 1; i <= legs_active; i++){//Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
+  else if(a==16){ //Eğer a değişkeni 16' ya eşitse asagıdaki kod satırları çalısır.
+      gait=0; //Hareket şekli belirtilir(0-stand).
+      int t_start=millis(); //Yeni bir zaman sayacı başlar.
+      for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
-      SerialUSB.println("dur");//Port ekranında yapılan hareker yazdırılır.
+      SerialUSB.println("dur"); //Port ekranında yapılan hareker yazdırılır.
   }  
   }
 
