@@ -50,35 +50,35 @@ void loop(){ //Sürekli çalışan fonksiyon
     int a = (int)(Serial2.read());
     int gait = 0; //Başlangıç hareket şekli tanımlanır(0-stand).
 
-  if(a==1) { //Eğer a değişkeni 1' e eşitse aşağıdaki kod satırları çalısır.  
+  if(a==1) { //Eğer a değişkeni 1' e eşit ise aşağıdaki kod satırları çalısır.  
       gait=1; //Hareket şekli belirtilir(1-walk).
       int t_start=millis(); //Yeni bir zaman sayacı başlar.
       for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
       SerialUSB.println("yürü"); //Port ekranında yapılan hareker yazdırılır.
   }
-  else if(a==8) { //Eğer a değişkeni 8' e eşitse aşağıdaki kod satırları çalısır.
+  else if(a==8) { //Eğer a değişkeni 8' e eşit ise aşağıdaki kod satırları çalısır.
       gait=4; //Hareket şekli belirtilir(4-right).
       int t_start=millis(); //Yeni bir zaman sayacı başlar.
       for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
       SerialUSB.println("saga don"); //Port ekranında yapılan hareker yazdırılır.
   }
-  else if(a==4) { //Eğer a değişkeni 4' e eşitse aşağıdaki kod satırları çalısır.
+  else if(a==4) { //Eğer a değişkeni 4' e eşit ise aşağıdaki kod satırları çalısır.
       gait=2; //Hareket şekli belirtilir(2-left).
       int t_start=millis(); //Yeni bir zaman sayacı başlar.
       for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
       SerialUSB.println("sola don"); //Port ekranında yapılan hareker yazdırılır.
   }
-  else if(a==2) { //Eğer a değişkeni 2' ye eşitse aşağıdaki kod satırları çalısır.
+  else if(a==2) { //Eğer a değişkeni 2' ye eşit ise aşağıdaki kod satırları çalısır.
       gait=3; //Hareket şekli belirtilir(3-reverse).
       int t_start=millis(); //Yeni bir zaman sayacı başlar.
       for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
       update_gait(i, gait, t_start);}
       SerialUSB.println("geri git"); //Port ekranında yapılan hareker yazdırılır.
   }  
-  else if(a==16){ //Eğer a değişkeni 16' ya eşitse asagıdaki kod satırları çalısır.
+  else if(a==16){ //Eğer a değişkeni 16' ya eşit ise asagıdaki kod satırları çalısır.
       gait=0; //Hareket şekli belirtilir(0-stand).
       int t_start=millis(); //Yeni bir zaman sayacı başlar.
       for (int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
