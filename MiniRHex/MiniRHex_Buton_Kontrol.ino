@@ -41,7 +41,7 @@ void setup(){ //Ayar ve tanıtma fonksiyonu
   pinMode(BOARD_BUTTON_PIN, INPUT_PULLDOWN); //Kartın üzerindeki butonun giriş olduğu belirtilir. 
   pinMode(BOARD_LED_PIN, OUTPUT); //Kartın üzerindeki led' in çıkış olduğu belirtilir.
   int t_start = millis();
-  for (int i = 1; i <= legs_active; i++){ //Reset butonuna basıldığında ayakların ayarlanılan sıfır noklarına gelmesini sağlar.
+  for (int i = 1; i <= legs_active; i++){ //Reset butonuna basıldığında ayakların ayarlanılan sıfır noktalarına gelmesini sağlar.
     Dxl.wheelMode(legs[i].id); 
     update_gait(i, initial_gait, t_start);
   }
