@@ -15,11 +15,11 @@ Bir MiniRhex inşa etmek bir 3D yazıcıya ve lazer kesiciye erişim gerektirir.
 
 ### Parçalar edinin
 
-Sipariş listesine ve sipariş bağlantılarına buradan ulaşabilirsiniz. [Parça Listesi](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
+Sipariş listesine ve sipariş bağlantılarına buradan ulaşabilirsiniz. [Parça Listesi](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList)
 
 ### Robotu birleştirin
 
-Montaj talimatları mevcuttur. [Montaj Talimatları](https://github.com/robomechanics/MiniRHex/tree/master/Assembly).
+Montaj talimatları mevcuttur. [Montaj Talimatları](https://github.com/robomechanics/MiniRHex/tree/master/Assembly)
 
 ![Ayak Montaj - Yakından](Images/1.jpg)
 
@@ -63,9 +63,9 @@ Yapılandırma başarılı olursa, yapılandırmakta olduğunuz servo ileri geri
 
 # Kullanışlı bağlantılar
 ### Parça listesi
-Parça listesine buradan ulaşabilirsiniz. [Parça Lstesi](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList).
+Parça listesine buradan ulaşabilirsiniz. [Parça Lstesi](https://github.com/robomechanics/MiniRHex/tree/master/HardwareList)
 ### MiniRHex deposu
-MiniRHex deposuna bu adresten ulaşılabilir. [MiniRHex Deposu](https://github.com/robomechanics/MiniRHex.git).
+MiniRHex deposuna bu adresten ulaşılabilir. [MiniRHex Deposu](https://github.com/robomechanics/MiniRHex.git)
 ### Alıntı MiniRHex
 Bir makalede MiniRHex'e gönderme yapıyorsanız lütfen alıntı yapın. [Özet](http://www.andrew.cmu.edu/user/amj1/papers/RSS2018ws_MiniRHex.pdf).
 Alıntı için bunu kullanın. [BibTeX](https://github.com/robomechanics/MiniRHex/blob/master/citation.txt):
