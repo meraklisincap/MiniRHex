@@ -37,13 +37,13 @@ void setup(){//Ayar ve tanıtma fonksiyonu
   pinMode(BOARD_BUTTON_PIN, INPUT_PULLDOWN);//Kartın üzerindeki butonun giriş oldugunu belirttik. 
   pinMode(BOARD_LED_PIN, OUTPUT);//Kartın üzerindeki led' in çıkış oldugunu belirttik.
   int t_start = millis();
-  for (int i = 1; i <= legs_active; i++){ //Reset butonuna basıldıgında ayakların ayarlaılan sıfır noklarına gelmesini saglar.  
+  for (int i = 1; i <= legs_active; i++){ //Reset butonuna basıldığında ayakların ayarlanılan sıfır noklarına gelmesini saglar.  
     Dxl.wheelMode(legs[i].id); 
     update_gait(i, initial_gait, t_start); 
   }
 }
 
-void dur(){//durma hareketi yapması için oluşturulan fonksiyon
+void dur(){//Durma hareketi yapması için oluşturulan fonksiyon
 
     int t_start=millis();//Yeni bir zaman sayacı başlar.
     int gait=0;//Hareket şeklini belirler(0-stand)
@@ -59,7 +59,7 @@ void ileri(){//İleri gitme hareketi yapması için oluşturulan fonksiyon
     update_gait(i, gait, t_start);}  
 
 }
-void sol(){//Sola donme hareketi yapması için oluşturulan fonksiyon
+void sol(){//Sola dönme hareketi yapması için oluşturulan fonksiyon
 
     int t_start=millis();//Yeni bir zaman sayacı başlar.
     int gait=2;//Hareket şeklini belirler(2-left).
@@ -76,7 +76,7 @@ void geri(){//Geri gitme hareketi yapması için oluşturulan fonksiyon
     update_gait(i, gait, t_start);}  
 
 }
-void sag(){//Saga donme hareketi yapması için oluşturulan fonksiyon
+void sag(){//Sağa dönme hareketi yapması için oluşturulan fonksiyon
 
     int t_start=millis();//Yeni bir zaman sayacı başlar.
     int gait=4;//Hareket şeklini belirler(4-right).
@@ -101,7 +101,7 @@ ileri();
 if(millis()>5000 && millis()<5100){ //5 ile 5.1' inci saniyeler arasında dur fonksiyonunu çalıştır.
 dur();
 }
-if(millis()>5500 && millis()<5600){//5.5 ile 5.6' inci saniyeler arasında sag fonksiyonunu çalıştır. 
+if(millis()>5500 && millis()<5600){//5.5 ile 5.6' inci saniyeler arasında sağ fonksiyonunu çalıştır. 
 sag();
 }
 if(millis()>8000 && millis()<8100){//8 ile 8.1' inci saniyeler arasında dur fonksiyonunu çalıştır. 
