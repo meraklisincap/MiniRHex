@@ -16,6 +16,7 @@ Dynamixel Dxl(DXL_BUS_SERIAL1);
 #define PRESENT_VOLTAGE 45
 #define LED 25
 
+// Global Değişkenler //
 float desired_vel;
 float desired_theta;
 float actual_vel;
@@ -25,51 +26,50 @@ float actual_p;
 
 int dead_buffer = 40;
 
-const int legs_active = 6;
+const int legs_active = 6; //Aktif ayak sayısını belirtir.
 
-const int packet_length =  2 * legs_active;
+const int packet_length =  2 * legs_active; //Bilgi paketinin uzunlugunu belirtir.
 word packet[packet_length]; 
 
-// Button ayarları //
-int button_state;
-int last_button_state = 0;
+// Button Ayarları //
+int button_state; //Buton durumu
+int last_button_state = 0; //Son durumdaki butonun değeri
 
-void setup(){
+void setup(){ //Ayar ve tanıtma fonksiyonu 
   Dxl.begin(3); 
   Serial2.begin(57600); 
-  pinMode(BOARD_BUTTON_PIN, INPUT_PULLDOWN); 
-  pinMode(BOARD_LED_PIN, OUTPUT); 
+  pinMode(BOARD_BUTTON_PIN, INPUT_PULLDOWN); //Kartın üzerindeki butonun giriş olduğu belirtilir. 
+  pinMode(BOARD_LED_PIN, OUTPUT); //Kartın üzerindeki led' in çıkış olduğu belirtilir.
   int t_start = millis();
-  for (int i = 1; i <= legs_active; i++){ 
+  for (int i = 1; i <= legs_active; i++){ //Reset butonuna basıldığında ayakların ayarlanılan sıfır noklarına gelmesini sağlar.
     Dxl.wheelMode(legs[i].id); 
     update_gait(i, initial_gait, t_start);
   }
 }
 
-void user_button_pressed(){
+void user_button_pressed(){ //Butona basıldığında çalışacak olan fonksiyon
   
-  digitalWrite(BOARD_LED_PIN, LOW); 
-  //compute new gait
-  int new_gait = (legs[1].gait + 1) % num_gaits;
-  int t_start = millis();
-  for(int i = 1; i <= legs_active; i++){
+  digitalWrite(BOARD_LED_PIN, LOW); //Kartın üzerindeki led' e gönderilen voltaj düşük olur.
+  int new_gait = (legs[1].gait + 1) % num_gaits; //Butona her basıldığında butonun değeri 1 artar ve hareket şekli belirlenir.
+  int t_start = millis(); //Yeni bir zaman sayacı başlatılır.
+  for(int i = 1; i <= legs_active; i++){ //Hareket şekli tüm bacaklara aktarılır ve bilgiler güncellenir.
     update_gait(i, new_gait, t_start);
   }
   
 }
 
-void user_button_released(){
-  digitalWrite(BOARD_LED_PIN, HIGH);
+void user_button_released(){ //Buton bırakıldığında çalışacak olan fonksiyon
+  digitalWrite(BOARD_LED_PIN, HIGH); //Kartın üzerindeki led' e gönderilen voltaj yüksek olur.
 }
 
 
-void loop(){
+void loop(){ //Sürekli çalışan fonksiyon 
 
   //button kontrol
-  button_state = digitalRead(BOARD_BUTTON_PIN);
-  if (button_state > last_button_state) user_button_pressed();
-  else if (button_state < last_button_state) user_button_released();
-  last_button_state = button_state;
+  button_state = digitalRead(BOARD_BUTTON_PIN); //Butona basılıp basılmadığını kontrol eder.
+  if (button_state > last_button_state) user_button_pressed(); //Eğer butonun durumu son durumdan büyük ise butona basıldığı anlamına gelir ve belirtilen fonksiyona yönlendirilir.
+  else if (button_state < last_button_state) user_button_released(); //Eğer butonun durumu son durumdan küçük ise butonun bırakıldığı anlamına gelir ve belirtilen fonsiyona yönlendirilir.
+  last_button_state = button_state; //Butonun durumu son durum değişkenine aktarılır.
 
 
 
